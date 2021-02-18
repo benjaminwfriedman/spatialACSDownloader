@@ -1,0 +1,25 @@
+Initial Set Up:
+
+  Open Anaconda Prompt
+
+  Navigate to Folder
+
+  conda create -n censusToolEnv
+  conda activate censusToolEnv
+
+  conda install --channel conda-forge geopandas
+  conda install --channel conda-forge requests
+
+  python censusTool.py
+
+
+--------------------------------------------------------------------------
+General Set Up:
+
+  Open Anaconda Prompt
+
+  Navigate to Folder
+
+  conda activate censusToolEnv
+
+  python censusTool.py
