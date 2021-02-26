@@ -9,21 +9,26 @@ def getStateCode(state_abr, county_name):
     state_df = lookup[lookup['state_abbr'] == state_abr]
     county_df = state_df[state_df['county_name'] == county_name]
     stateCode_raw = county_df['state'].values
-    print(stateCode_raw)
-    if stateCode_raw < 2:
+    stateCode = str(int(stateCode_raw[0]))
+    if len(stateCode) == 2:
+        stateCode = stateCode
+    if len(stateCode) == 1:
         stateCode = "0" + str(int(stateCode_raw))
-    else:
-        stateCode = str(int(stateCode_raw))
-    print(stateCode)
+    print("State", stateCode)
     return stateCode
 
 def getCountyCode(state_abr, county_name):
     state_df = lookup[lookup['state_abbr'] == state_abr]
     county_df = state_df[state_df['county_name'] == county_name]
     countyCode_raw = county_df['county'].values
-    countyCode = "0" + str(int(countyCode_raw))
-    if len(countyCode) < 3:
+    countyCode = str(int(countyCode_raw[0]))
+    if len(countyCode) == 3:
+        countyCode = countyCode
+    if len(countyCode) == 2:
         countyCode = "0" + countyCode
+    if len(countyCode) == 1:
+        countyCode = "00" + countyCode
+    print("County", countyCode)
     return countyCode
 
 print('Welcome to the county level Census GIS extractor for ACS data')
