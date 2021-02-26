@@ -8,6 +8,10 @@ import json
 
 ############ Methods ###################################################
 
+
+## getStateCode
+## Inputs: state abr (CA, IL), official county name (Cook County)
+## Returns: the properly formatted State Code
 def getStateCode(state_abr, county_name):
     state_df = lookup[lookup['state_abbr'] == state_abr]
     county_df = state_df[state_df['county_name'] == county_name]
@@ -20,6 +24,9 @@ def getStateCode(state_abr, county_name):
     print("State", stateCode)
     return stateCode
 
+## getCountyCode
+## Inputs: state abr (CA, IL), official county name (Cook County)
+## Returns: the properly formatted County Code
 def getCountyCode(state_abr, county_name):
     state_df = lookup[lookup['state_abbr'] == state_abr]
     county_df = state_df[state_df['county_name'] == county_name]
@@ -40,7 +47,7 @@ def getCountyCode(state_abr, county_name):
 lookup = pd.read_csv("./county_fips_master.csv", encoding='gbk')
 
 
-## Prin welcome messege
+## Print welcome messege
 print('Welcome to the county level Census GIS extractor for ACS data')
 print('This system was built by Benny Friedman')
 
