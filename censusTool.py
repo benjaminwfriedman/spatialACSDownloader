@@ -21,7 +21,6 @@ def getStateCode(state_abr, county_name):
         stateCode = stateCode
     if len(stateCode) == 1:
         stateCode = "0" + str(int(stateCode_raw))
-    print("State", stateCode)
     return stateCode
 
 ## getCountyCode
@@ -38,7 +37,6 @@ def getCountyCode(state_abr, county_name):
         countyCode = "0" + countyCode
     if len(countyCode) == 1:
         countyCode = "00" + countyCode
-    print("County", countyCode)
     return countyCode
 
 ################ Script #################################################
