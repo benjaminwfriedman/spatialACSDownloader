@@ -8,7 +8,7 @@ Initial Set Up:
   conda activate censusToolEnv
 
   conda install --channel conda-forge geopandas
-  conda install --channel conda-forge requests
+  conda install requests
 
   python censusTool.py
 
